@@ -154,6 +154,12 @@
       <Version>6.2.12</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="CustomEffect\CustomEffect.csproj">
+      <Project>{9aeaee5f-6c58-570d-9476-fbd81033c9ab}</Project>
+      <Name>CustomEffect</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
