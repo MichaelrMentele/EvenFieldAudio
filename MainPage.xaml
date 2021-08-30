@@ -10,9 +10,9 @@
 
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
-            <RowDefinition x:Name="Header" Height="160" />
+            <RowDefinition x:Name="Header" Height="100" />
             <RowDefinition x:Name="Body" Height="*" />
-            <RowDefinition x:Name="Footer" Height="80" />
+            <RowDefinition x:Name="Footer" Height="40" />
         </Grid.RowDefinitions>
 
         <!--  - Header  -->
@@ -36,11 +36,16 @@
         <Grid
             x:Name="BodyGrid"
             Grid.Row="1"
-            Padding="40">
+            Padding="40,40,40,40">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="8*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition x:Name="LeftBody" />
-                <ColumnDefinition x:Name="CenterBody" />
-                <ColumnDefinition x:Name="RightBody" />
+                <ColumnDefinition x:Name="LeftBody" Width="1*" />
+                <ColumnDefinition x:Name="CenterBody" Width="2*" />
+                <ColumnDefinition x:Name="RightBody" Width="1*" />
             </Grid.ColumnDefinitions>
 
             <!--  - Left Body  -->
@@ -50,20 +55,22 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
                 FontSize="24"
-                Text="Left Ear Condition"
-                TextWrapping="Wrap" />
+                Text="Left Ear Condition" />
             <Rectangle
+                Grid.Row="1"
                 Grid.Column="0"
                 Width="100"
                 Height="100"
+                HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Fill="Black"
                 Stroke="Black" />
             <ComboBox
                 x:Name="LeftEarConditionSelection"
+                Grid.Row="2"
                 Grid.Column="0"
                 Width="120"
-                HorizontalAlignment="Stretch"
+                HorizontalAlignment="Center"
                 VerticalAlignment="Bottom"
                 ItemsSource=""
                 SelectedIndex="0"
@@ -72,6 +79,7 @@
             <!--  - Center Body  -->
             <Button
                 x:Name="PlayDemo"
+                Grid.Row="2"
                 Grid.Column="1"
                 Width="259"
                 Height="53"
@@ -80,27 +88,37 @@
                 Click="PlayDemo_Click"
                 Content="Play Demo"
                 FontSize="18" />
-            <Rectangle
+            <Ellipse
+                Grid.Row="1"
                 Grid.Column="1"
-                MinWidth="100"
-                MinHeight="100"
+                Width="10"
+                Height="10"
+                MinWidth="10"
+                MinHeight="10"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Fill="Black"
                 Stroke="Black" />
+            <Ellipse
+                Grid.Row="1"
+                Grid.Column="1"
+                Width="343"
+                Height="343"
+                MinWidth="100"
+                MinHeight="100"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Stroke="Black" />
             <ListBox
                 x:Name="outputDevicesListBox"
                 Grid.Column="1"
-                MaxWidth="600"
-                Margin="0,20,15,20"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
                 IsEnabled="True"
-                SelectionChanged="outputDevicesListBox_SelectionChanged" />
+                SelectionChanged="OutputDevicesListBox_SelectionChanged" />
             <ComboBox
                 x:Name="EffectTypeSelection"
                 Grid.Column="1"
-                Width="120"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
                 PlaceholderText="Select Method"
@@ -109,7 +127,6 @@
             <Button
                 x:Name="SelectFile"
                 Grid.Column="1"
-                HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Click="File_Click"
                 Content="Select File"
@@ -125,6 +142,7 @@
                 Text="Right Ear Condition"
                 TextWrapping="Wrap" />
             <Rectangle
+                Grid.Row="1"
                 Grid.Column="2"
                 Width="100"
                 Height="100"
@@ -134,10 +152,12 @@
                 Stroke="Black" />
             <ComboBox
                 x:Name="RightEarConditionSelection"
+                Grid.Row="2"
                 Grid.Column="2"
                 Width="120"
-                HorizontalAlignment="Stretch"
+                HorizontalAlignment="Center"
                 VerticalAlignment="Bottom" />
+
         </Grid>
 
         <Grid
